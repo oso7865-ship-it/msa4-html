@@ -7,8 +7,63 @@
 </head>
 <body>
   <!-- Form 태그 : 유저가 입력한 정보를 제출하기 위하여 범위를 지정하는 태그-->
-  <form action="" method="get"></form>
-  <!-- Input 태그 : 데이터를 입력 받을 수 있는 태그-->
-  <input type="text" maxlength="5" placeholder="아이디를 입력해주세요.">
+  <form action="" method="get">
+    <!-- Fieldset 태그 : 여러 컨트롤과 레이벨을 묶을 때 사용하는 태그-->
+   <fieldset style="width: 300px;">
+    <!-- legend 태그 : 필드셋태그의 콘텐츠를 설명하는 태그-->
+    <legend>로그인 폼</legend>
+    <!-- Label 태그 : 입력받는 필드를 설명할 때 사용하는 태그-->
+     <!-- Input 태그의 id속성값과 Label태그의 for속성값이 동일하게 하여 연결 가능-->
+     <input type="text" value="미리 넣어둔 값" name="readonlyEmail" readonly>
+     <br>
+    <label for="account">ID:</label>
+    <!-- Input 태그 : 데이터를 입력 받을 수 있는 태그-->
+    <input type="text" id="account" minlength="2" maxlength="5" placeholder="아이디를 입력해주세요." required>
+    <br>
+    <label for="password">PW:</label>
+    <input type="password" id="password">
+    <br><br>
+    <!-- Textarea 태그 : 여러 줄을 입력하는 텍스트 영역을 만드는 태그-->
+     <label for="info">기타</label>
+     <br>
+    <textarea name="info" id="info" cols="50" rows="10"></textarea>
+    <br><br>
+    <!-- selcet 태그 : 드롭다운 목록을 만드는 태그-->
+     <!-- option 태그 : 드롭다운의 리스트를 만드는 태그-->
+      <!-- value 속성 : 서버로 넘겨줄 값을 지정-->
+       <!-- selceted 속성 : 초기에 선택되어 보여질 항목을 지정-->
+    <select name="rice" id="rice">
+      <option value="bab">밥</option>
+      <option value="donggas" selected>돈까스</option>
+    </select>
+     </fieldset>
+     <!-- button 태그 : 버튼을 만들어 주는 태그-->
+     <button type="submit">전송</button>
+     <button type="reset">초기화</button>
+     <button type="reset">버튼</button>
+     <br>
+     <!-- 기타 Input의 타입-->
+     <input type="email" name="email" id="email">
+     <br>
+     <input type="number" name="number" id="number" min="0" max="5">
+     <br>
+     <input type="range" name="range" id="range" min="0" max="10">
+     <br>
+     <input type="date" name="date" id="date">
+     <br>
+     <!-- checkbox 유의사항 : name을 이용하여 그룹화 하기때문에 name을 일치 시켜줘야 한다.-->
+     <input type="checkbox" name="Fruit" id="banana" value="banana" checked>
+     <label for="banana">바나나</label>
+     <input type="checkbox" name="Fruit" id="sb" value="sb" >
+     <label for="Fruit">딸기</label>
+     <br>
+     <input type="radio" name="foods" id="hamberger" value="hamberger">
+     <label for="hamberger">햄버거</label>
+     <input type="radio" name="foods" id="dubbab" value="dubbab" checked>
+     <label for="dubbab">덮밥</label>
+
+     <!-- 화면 폼에는 보이지 않지만 사용자가 입력을 마치면 함께 서버로 전송되는 속성값-->
+     <input type="hidden" name="hidden" value="내가 보내줄 값">
+  </form>
 </body>
 </html>
